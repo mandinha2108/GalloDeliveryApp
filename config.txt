@@ -1,0 +1,15 @@
+git config --global user.name OrtigosaLaura
+git config --global user.email lauraortigosa378@gmail.com
+
+--criar o projeto
+npx create-expo-app@latest galloDelivery
+
+--limpando template
+cd galloDelivery
+npm run reset-project         pressionar n
+
+--criar pasta constants
+--criar um arquivo Colors.ts na pasta constants
+
+--criar uma pasta components
+--criar um arquivo CustomHeader.tsx e executar rnfs
