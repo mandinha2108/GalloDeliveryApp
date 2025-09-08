@@ -1,5 +1,5 @@
-git config --global user.name OrtigosaLaura
-git config --global user.email lauraortigosa378@gmail.com
+git config --global user.name mandinha2108
+git config --global user.email amafur8@gmail.com
 
 --criar o projeto
 npx create-expo-app@latest galloDelivery
@@ -13,3 +13,7 @@ npm run reset-project         pressionar n
 
 --criar uma pasta components
 --criar um arquivo CustomHeader.tsx e executar rnfs
+
+npm i @gorhom/bottom-sheet
+npx expo install react-native-reanimated react-native-gesture-handler
+npx expo customize babel.config.js
