@@ -22,10 +22,10 @@ const BottomSheet = forwardRef<Ref>((props, ref) => {
             
             <BottomSheetView style={styles.contentContainer}>
                 <View style={styles.toggle}>
-                    <TouchableOpacity style={[styles.toogleButton, styles.toogleActive]}>
+                    <TouchableOpacity style={[styles.toggleButton, styles.toggleActive]}>
                         <Text style={styles.activeText}>Entrega</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={[styles.toogleButton, styles.toogleInactive]}>
+                    <TouchableOpacity style={[styles.toggleButton, styles.toggleInactive]}>
                         <Text style={styles.inactiveText}>Entrega</Text>
                     </TouchableOpacity>
 
@@ -37,11 +37,20 @@ const BottomSheet = forwardRef<Ref>((props, ref) => {
                     <Ionicons name="location-outline" size={28} color={Colors.medium} />
                     <Text style={{ flex: 1}}>Localização atual</Text>
                     <Ionicons name="chevron-forward" size={20} color={Colors.primary} />
-
                 </TouchableOpacity>
                 </Link>
-                <TouchableOpacity onPress={ () => dismiss() }>
-                    <Text>Fechar</Text>
+
+                <Text style={styles.subheader}>Tempo para entrega</Text>
+                <Link href={'/'} asChild>
+                <TouchableOpacity style={styles.item}>
+                    <Ionicons name="location-outline" size={28} color={Colors.medium} />
+                    <Text style={{ flex: 1}}>Agora</Text>
+                    <Ionicons name="chevron-forward" size={20} color={Colors.primary} />
+                </TouchableOpacity>
+                </Link>
+
+                <TouchableOpacity style={styles.button} onPress={ () => dismiss() }>
+                    <Text style={styles.buttonText}>Confirmar</Text>
                 </TouchableOpacity>
             </BottomSheetView>
         </BottomSheetModal>
@@ -52,7 +61,56 @@ export default BottomSheet
 
 const styles = StyleSheet.create({
     contentContainer: {
-        alignItems: 'center',
         height: '100%',
+        paddingHorizontal: 16,
     },
+    toggle: {
+        flexDirection: 'row',
+        justifyContent: 'center',
+        gap: 20,
+        marginBottom: 32,
+    },
+    toggleButton: {
+        paddingVertical: 4,
+        paddingHorizontal: 30,
+        borderRadius: 32,
+    },
+    toggleActive: {
+        backgroundColor: Colors.primary
+    },
+    activeText: {
+        color: '#fff',
+        fontWeight: '700',
+
+    },
+    toggleInactive: {},
+    inactiveText: {
+        color: Colors.primary
+    },
+    subheader: {
+        fontSize: 16,
+        fontWeight: '600',
+        marginBottom: 10,
+    },
+    item: {
+        flexDirection: 'row',
+        gap: 8,
+        alignItems: 'center',
+        padding: 16,
+        borderColor: Colors.grey,
+        borderWidth: 1,
+        marginBottom: 16,
+    },
+    button: {
+        backgroundColor: Colors.primary,
+        padding: 12,
+        borderRadius: 8,
+        alignItems: 'center',
+        marginTop: 10,
+    },
+    buttonText: {
+        color:'#fff',
+        fontWeight: 'bold',
+    }
+
 })
